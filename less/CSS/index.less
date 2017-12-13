@@ -1,0 +1,25 @@
+@color:#ccc;
+.box-shadow(@style,@alpha:50%){
+  box-shadow: @style rgba(0,0,0,@alpha);
+  -o-box-shadow: @style rgba(0,0,0,@alpha);
+  -ms-box-shadow: @style rgba(0,0,0,@alpha);
+  -moz-box-shadow: @style rgba(0,0,0,@alpha);
+  -webkit-box-shadow: @style rgba(0,0,0,@alpha);
+};
+.box{
+  width: 500px;
+  height: 60px;
+  color: @color;
+  background: red;
+  border-color: #fdcdea;
+  div{ /*嵌套：代表 .box div*/
+    .box-shadow(0 0 5px,30%)
+  };
+  &:hover{ /*嵌套：代表 .box:hover*/
+    color: saturate(@color,5%);/*saturate ：less提供的方法代表颜色减少5%，还有很多这样的方法例如darken加深多少*/
+    div{
+      /*嵌套：代表.box:hover div*/
+      .box-shadow(0 0 5px)
+    }
+  }
+}

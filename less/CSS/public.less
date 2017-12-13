@@ -1,0 +1,49 @@
+/*示例演示1*/
+@link-color:#ccc;
+@link-color-hover:darken(@link-color,10%);
+@url:'../img';
+a{
+  color: @link-color;
+  &:hover{
+    color: @link-color-hover;
+  }
+}
+.box{
+  color: @link-color;
+  background: url("@{url}/banner.png")no-repeat;
+}
+
+/*示例演示2*/
+@selector:box;
+@bgImg:'../img';
+@property:color;
+@name:'珠峰';
+@var:'name';
+
+.@{selector}{
+  width: 200px;
+  height: 200px;
+  @{property}:#000;
+  background: url("@{bgImg}/test.png")no-repeat;
+  &:after{
+    display: block;
+    content: @@var;
+  }
+}
+/*示例演示3*/
+.public{
+  width: 100px;
+  height: 100px;
+}
+.box{
+  .public;
+}
+/*示例演示4*/
+.public(){
+  width: 100px;
+  height: 100px;
+}
+.box{
+  .public;
+}
+

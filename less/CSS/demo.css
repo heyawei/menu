@@ -1,0 +1,38 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.box {
+  /* position: absolute;整个盒子垂直居中;需要知道盒子的具体宽高，才能计算出对应得margin值；但是兼容所有浏览器
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;*/
+  /*可以支持传参*/
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  /*整个盒子垂直居中;不需要知道宽高，但是不兼容IE低版本浏览器*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: #000;
+  border: 1px solid #ccc;
+  /*.transition(all,.3s,linear,0s);*/
+  transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+}
+.box:hover {
+  transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  background: #1a87ff;
+  /*lighten 提供的方法*/
+}
